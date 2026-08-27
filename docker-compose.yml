@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: simracinghub-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: simracinghub
+    ports:
+      - "5432:5432"
+    volumes:
+      - simracinghub-data:/var/lib/postgresql/data
+
+volumes:
+  simracinghub-data:

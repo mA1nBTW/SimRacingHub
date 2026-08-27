@@ -1,0 +1,6 @@
+@SimRacingHub_HostAddress = http://localhost:5105
+
+GET {{SimRacingHub_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
