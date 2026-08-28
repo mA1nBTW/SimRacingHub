@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SimRacingHub.Features.Setups.CreateSetup;
 using SimRacingHub.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,5 +25,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapControllers();
+
+app.MapCreateSetupEndpoint();
 
 app.Run();
