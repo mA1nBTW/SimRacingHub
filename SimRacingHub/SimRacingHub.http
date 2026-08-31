@@ -1,6 +1,23 @@
-@SimRacingHub_HostAddress = http://localhost:5105
+@HostAddress = https://localhost:7076
 
-GET {{SimRacingHub_HostAddress}}/weatherforecast/
-Accept: application/json
+### Создание нового сетапа
+POST {{HostAddress}}/api/setups
+Content-Type: application/json
 
-###
+{
+  "gameId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "carId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "trackId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "inputDevice": "Gamepad",
+  "deviceModel": "DualSense 5",
+  "title": "Wet Race Qualy Spa",
+  "parameters": {
+    "$type" : "f1",
+    "FrontWing": 35,
+    "RearWing": 40,
+    "DifferentialAdjustmentOnThrottle": 55
+  }
+}
+
+### Получение сетапа по ID
+GET {{HostAddress}}/api/setups/2e3d3e70-1f69-4fcd-a552-6a43cfc1059b

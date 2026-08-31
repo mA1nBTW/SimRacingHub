@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SimRacingHub.Features.Setups.CreateSetup;
+using SimRacingHub.Features.Setups.GetSetupById;
 using SimRacingHub.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Progr
 
 //3. НАСТРОЙКА SWAGGER (Интерфейс для тестов API)
 builder.Services.AddOpenApi();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -27,5 +29,6 @@ app.UseHttpsRedirection();
 app.MapControllers();
 
 app.MapCreateSetupEndpoint();
+app.MapGetSetupByIdEndpoint();
 
 app.Run();
